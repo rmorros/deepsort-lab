@@ -1,10 +1,26 @@
-## Object Tracking
-Installation: Use this command to install all the necessary packages. Note that we are using ```python3```
+# Object Tracking using DeepSORT
 
-Link to the blog [click here](https://blog.nanonets.com/object-tracking-deepsort/)
-```sh
-pip install -r requirements.txt
+## Installation:
+
+Optional: Create virtualenv:
+
 ```
+virtualenv --python=python3.6 ~/venv/deepsort
+source ~/venv/deepsprt/bin/activate
+```
+
+Install packages:
+```
+pip install numpy scipy Pillow
+pip install torch torchvision
+pip install opencv_python
+pip install tensorflow_gpu
+```
+
+Tested with tensorflow==2.2.0 and torch==1.5.0, with CUDA 10.0
+
+## Description
+
 This module is a modification of the [nanonets deepsort repository](https://blog.nanonets.com/object-tracking-deepsort/), which is built on top of the [original deep sort module](https://github.com/nwojke/deep_sort). The original nwojke repo is built only for validating the algorithm with the MARS test dataset. The abhyantrika nanonets.com repo adds a custom class deepsort.py that acts as a bridge and also takes in any custom configurations like a different feature extractor and other parameters. It assumes that the detections are already available for the given video and does not provide support for object detection.
 
 This repository provides a simplified version of abhyantrika repo, removing the training scripts and pre-computed detection files.I also modified slightly the code so it works on moder versions of scipy/sklearn. A new test video has been added. The purpose of this repo is to be the basis for a lab where the students can add object detection capabilities to the algorithm, creating a tracker than can be used on any video.. 
