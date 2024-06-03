@@ -20,7 +20,7 @@ def get_gaussian_mask():
 	z = z.reshape(x.shape) 
 
 	z = z / z.max()
-	z  = z.astype(np.float32)
+	z  = z.astype(float)
 
 	mask = torch.from_numpy(z)
 
