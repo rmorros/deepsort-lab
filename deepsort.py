@@ -36,7 +36,7 @@ class deepsort_rbc():
 		if wt_path is not None:
 			self.encoder = torch.load(wt_path)			
 		else:
-			self.encoder = torch.load('ckpts/model640.pt')
+			self.encoder = torch.load('ckpts/model640.pt', weights_only = False)
 			
 		self.encoder = self.encoder.cuda()
 		self.encoder = self.encoder.eval()
